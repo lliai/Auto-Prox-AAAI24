@@ -1,4 +1,4 @@
-# Auto-Prox: Training-Free Vision Transformer Architecture Search via Automatic Proxy Discovery
+# Auto-Prox: Training-Free Vision Transformer Architecture Search via Automatic Proxy Discovery (AAAI2024)
 
 This repository contains the code implementation of Auto-Prox, a training-free vision transformer architecture search algorithm. Auto-Prox is designed to automatically discover the optimal architecture for vision transformers without the need for training.
 
