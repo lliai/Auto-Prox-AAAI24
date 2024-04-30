@@ -1,0 +1,96 @@
+AUTOFORMER_SEARCH_SPACE:
+  DEPTH:
+  - 12
+  - 13
+  - 14
+  HIDDEN_DIM:
+  - 192
+  - 216
+  - 240
+  MLP_RATIO:
+  - 3.5
+  - 4.0
+  NUM_HEADS:
+  - 3
+  - 4
+AUTOFORMER_SUBNET:
+  DEPTH: 12
+  HIDDEN_DIM: 216
+  MLP_RATIO:
+  - 3.5
+  - 3.5
+  - 4.0
+  - 4.0
+  - 3.5
+  - 4.0
+  - 4.0
+  - 4.0
+  - 4.0
+  - 4.0
+  - 3.5
+  - 4.0
+  NUM_HEADS:
+  - 4
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 4
+  - 4
+  - 3
+  - 3
+  - 3
+  - 3
+CNN:
+  DEPTH: 56
+CUDNN:
+  BENCHMARK: false
+DATA_LOADER:
+  NUM_WORKERS: 4
+DISTILLATION:
+  ENABLE_INTER: true
+  INTER_STUDENT_INDEX:
+  - 0
+  - 6
+  - 11
+  INTER_TEACHER_INDEX:
+  - 0
+  - 1
+  - 2
+  INTER_TRANSFORM: linear
+  INTER_WEIGHT: 2.5
+  TEACHER_IMG_SIZE: 32
+  TEACHER_MODEL: ResNet
+  TEACHER_WEIGHTS: work_dirs/r-56_c100/model.pyth
+MODEL:
+  NUM_CLASSES: 100
+  TYPE: AutoFormerSub
+NUM_GPUS: 1
+OPTIM:
+  BASE_LR: 0.0005
+  LR_POLICY: cos
+  MAX_EPOCH: 300
+  MIN_LR: 5.0e-06
+  OPTIMIZER: adamw
+  WARMUP_EPOCHS: 20
+  WARMUP_FACTOR: 0.001
+  WEIGHT_DECAY: 0.05
+PROXY_DATASET: cifar100
+RESNET:
+  TRANS_FUN: basic_transform
+TEST:
+  BATCH_SIZE: 200
+  DATASET: cifar100
+  SPLIT: test
+TRAIN:
+  BATCH_SIZE: 128
+  DATASET: cifar100
+  SPLIT: train
+TRANSFORMER:
+  ATTENTION_DROP_RATE: 0.0
+  DEPTH: 13
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  HIDDEN_DIM: 192
+  PATCH_SIZE: 16
